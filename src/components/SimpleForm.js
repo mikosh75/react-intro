@@ -6,11 +6,16 @@ import LastNameField from './LastNameField';
 
 class SimpleForm extends React.Component {
     
-    state = {
-        firstName: "",
-        firstNameError: ""
-    };
-
+    constructor(props) {
+        super(props)
+        this.state = { 
+            firstName: "",
+            firstNameError: "",
+            lastName: "",
+            lastNameError: "" 
+        }
+      }
+    
     validateName = name => {
         const regex = /[A-Za-z]{3,}/;
     
@@ -42,26 +47,26 @@ class SimpleForm extends React.Component {
     });
 
     render () {
-    const { firstNameError, firstName, lastName, lastNameError} = this.state;
+        const { firstNameError, firstName, lastName, lastNameError} = this.state;
 
-    return (
-        <div style={style.form}>
-            <FirstNameField 
-                   onChange={this.onFirstNameChange}
-                   onBlur={this.onFirstNameBlur}
-                   error={firstNameError} />
+        return (
+            <div style={style.form}>
+                <FirstNameField 
+                    onChange={this.onFirstNameChange}
+                    onBlur={this.onFirstNameBlur}
+                    error={firstNameError} />
 
-            <LastNameField 
-                   onChange={this.onLastNameChange}
-                   onBlur={this.onLastNameBlur}
-                   error={lastNameError} />
+                <LastNameField 
+                    onChange={this.onLastNameChange}
+                    onBlur={this.onLastNameBlur}
+                    error={lastNameError} />
 
-            <Greetings 
-                firstName={firstName}
-                lastName={lastName} />
-        </div>
-    )
-  }
+                <Greetings 
+                    firstName={firstName}
+                    lastName={lastName} />
+            </div>
+        )
+    }
 }
 
 export default SimpleForm

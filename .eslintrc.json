@@ -3,7 +3,7 @@
         "react"
     ],
     "extends": [
-        "plugin:react/recommended",
-        "standard"
+        "eslint:all",
+        "plugin:react/all"
     ]
 }

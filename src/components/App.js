@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import SimpleForm from './SimpleForm'
+import Converter from './Converter'
 
 class App extends Component {
   render () {
@@ -14,9 +15,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div>
-          <SimpleForm />
-        </div>
+        <SimpleForm />
+        <Converter />
       </div>
     )
   }
